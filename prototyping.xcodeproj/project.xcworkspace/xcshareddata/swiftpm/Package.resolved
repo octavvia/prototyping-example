@@ -1,0 +1,15 @@
+{
+  "originHash" : "8bc7d1bf4286bb40bf97bec8099e288c6998da66075fbc37bf22c00b1486083c",
+  "pins" : [
+    {
+      "identity" : "swiftdotenv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftOnTheServer/SwiftDotEnv",
+      "state" : {
+        "revision" : "2a7527210766fc726fb3d26fa9b8f295841e73df",
+        "version" : "2.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}

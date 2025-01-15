@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		599136902D363F03002789F1 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 5991368F2D363F03002789F1 /* SwiftDotEnv */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		5991362B2D361438002789F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,33 @@
 		599136342D361438002789F1 /* prototypingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = prototypingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5991368B2D362463002789F1 /* Exceptions for "prototyping" folder in "prototyping" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				.env,
+			);
+			target = 599136162D361436002789F1 /* prototyping */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		5991368C2D362463002789F1 /* Exceptions for "prototyping" folder in "Compile Sources" phase from "prototyping" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 599136132D361436002789F1 /* Sources */;
+			membershipExceptions = (
+				.env,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		599136192D361436002789F1 /* prototyping */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5991368B2D362463002789F1 /* Exceptions for "prototyping" folder in "prototyping" target */,
+				5991368C2D362463002789F1 /* Exceptions for "prototyping" folder in "Compile Sources" phase from "prototyping" target */,
+			);
 			path = prototyping;
 			sourceTree = "<group>";
 		};
@@ -52,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599136902D363F03002789F1 /* SwiftDotEnv in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +107,7 @@
 				599136192D361436002789F1 /* prototyping */,
 				5991362D2D361438002789F1 /* prototypingTests */,
 				599136372D361438002789F1 /* prototypingUITests */,
+				5991368E2D363F03002789F1 /* Frameworks */,
 				599136182D361436002789F1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +120,13 @@
 				599136342D361438002789F1 /* prototypingUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5991368E2D363F03002789F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +149,7 @@
 			);
 			name = prototyping;
 			packageProductDependencies = (
+				5991368F2D363F03002789F1 /* SwiftDotEnv */,
 			);
 			productName = prototyping;
 			productReference = 599136172D361436002789F1 /* prototyping.app */;
@@ -195,6 +233,9 @@
 			);
 			mainGroup = 5991360E2D361436002789F1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5991368D2D363ECB002789F1 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 599136182D361436002789F1 /* Products */;
 			projectDirPath = "";
@@ -591,6 +632,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5991368D2D363ECB002789F1 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftOnTheServer/SwiftDotEnv";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5991368F2D363F03002789F1 /* SwiftDotEnv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5991368D2D363ECB002789F1 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
+			productName = SwiftDotEnv;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5991360F2D361436002789F1 /* Project object */;
 }
