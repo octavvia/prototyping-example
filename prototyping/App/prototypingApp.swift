@@ -28,44 +28,23 @@
 //            ContentView()
 //        }
 //        .modelContainer(sharedModelContainer)
-//    }
-//}
-
-
-//import SwiftUI
-//
-//@main
-//struct PrototypingApp: App {
-//    init() {
-//        Env.loadEnv() // Load environment variables at startup
-//    }
-//
-//    var body: some Scene {
-//        WindowGroup {
-//            ContentView()
-//        }
-//    }
-//}
-
-
 import SwiftUI
 
 @main
 struct PrototypingApp: App {
-    init() {
-        Env.loadEnv() // Load environment variables at startup
-    }
+//    init() {
+//        Env.loadEnv() // Load environment variables at startup
+//    }
 
     var body: some Scene {
         WindowGroup {
-            // Provide a ViewModel instance here
-            PopularMoviesView(viewModel: PopularMoviesViewModel(fetchPopularMoviesUseCase: makeFetchPopularMoviesUseCase()))
-        }
-    }
+                    let apiClient = APIClient()
+                    let service = MovieServiceImpl(apiClient: apiClient)
+                    let repository = MovieRepositoryImpl(service: service)
+                    let fetchPopularMovies = FetchPopularMovies(repository: repository)
+                    let viewModel = MovieListViewModel(fetchPopularMovies: fetchPopularMovies)
 
-    private func makeFetchPopularMoviesUseCase() -> FetchPopularMoviesUseCase {
-        let networkService = NetworkService()
-        let repository = MovieRepositoryImpl(networkService: networkService)
-        return FetchPopularMoviesUseCase(repository: repository)
+                    MovieListView(viewModel: viewModel)
+                }
     }
 }

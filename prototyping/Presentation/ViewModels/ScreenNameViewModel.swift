@@ -1,20 +1,25 @@
-import SwiftUI
+import Foundation
 
 @MainActor
-class PopularMoviesViewModel: ObservableObject {
+class MovieListViewModel: ObservableObject {
     @Published var movies: [Movie] = []
-    
-    private let fetchPopularMoviesUseCase: FetchPopularMoviesUseCase
-    
-    init(fetchPopularMoviesUseCase: FetchPopularMoviesUseCase) {
-        self.fetchPopularMoviesUseCase = fetchPopularMoviesUseCase
+    private let fetchPopularMovies: FetchPopularMovies
+
+    init(fetchPopularMovies: FetchPopularMovies) {
+        self.fetchPopularMovies = fetchPopularMovies
     }
-    
+
     func loadMovies() async {
         do {
-            movies = try await fetchPopularMoviesUseCase.execute()
+            let movies = try await fetchPopularMovies.execute()
+            
+            // Debugging log to check the fetched movies count
+            print("Fetched \(movies.count) movies: \(movies.map { $0.title })")
+            
+            self.movies = movies
+            print("Movies successfully updated in ViewModel. Total: \(self.movies.count)")
         } catch {
-            print("Error fetching movies: \(error)")
+            print("Failed to load movies: \(error)")
         }
     }
 }
